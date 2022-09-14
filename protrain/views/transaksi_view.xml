@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- protrain.transaksi tree view -->
+    <record id="protrain_transaksi_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Transaksi</field>
+        <field name="model">protrain.transaksi</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="state == 'draft'"
+                  decoration-muted="state == 'cancelled'"
+                  decoration-info="state == 'confirm'"
+                  decoration-primary="state == 'done'">
+                <field name="name"/>
+                <field name="nama_pembeli"/>
+                <field name="tgl_transaksi"/>
+                <field name="total_bayar"/>
+                <field name="state"
+                    decoration-success="state == 'draft'"
+                    decoration-muted="state == 'cancelled'"
+                    decoration-info="state == 'confirm'"
+                    decoration-primary="state == 'done'"
+                widget="badge"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- protrain.transaksi form view -->
+    <record id="protrain_transaksi_view_form" model="ir.ui.view">
+        <field name="name">Form Transaksi</field>
+        <field name="model">protrain.transaksi</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <header>
+                    <button string="Confirm" name="action_confirm" type="object" class="btn btn-primary" states="draft"/>
+                    <button string="Done" name="action_done" type="object" class="btn btn-primary" states="confirm"/>
+                    <button string="Cancel" name="action_cancel" type="object" class="btn btn-warning" states="confirm" confirm="Anda yakin ingin meng-cancel Quotation ini?"/>
+                    <button string="Kembali Ke Draft" name="action_draft" type="object" class="btn btn-danger" states="cancelled" confirm="Anda yakin ingin mengedit Quotation ini?"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="nama_pembeli" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="tgl_transaksi" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="total_bayar" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        
+                    </group>
+                    <group name="daftarobat" string="Daftar Obat"> 
+                        <field name="dettrans_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                            <tree editable='bottom'>
+                                <field name="obat_id"/>
+                                <field name="harga_satuan"/>
+                                <field name="qty"/>
+                                <field name="subtotal" sum="Total"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- protrain.transaksi action window -->
+    <record id="protrain_transaksi_action" model="ir.actions.act_window">
+        <field name="name">TRANSAKSI</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">protrain.transaksi</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="transaksi_view_menu_act"
+            name="Transaksi Penjualan"
+            parent="protrain_transaksi_menu_categ"
+            action="protrain_transaksi_action"
+            sequence="10"/>
+
+</odoo>

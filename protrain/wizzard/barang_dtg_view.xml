@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- model.name form view -->
+    <record id="barang_dtg_view_form_wizzard" model="ir.ui.view">
+        <field name="name">Kedatangan Barang</field>
+        <field name="model">protrain.barangdatang</field>
+        <field name="arch" type="xml">
+            <form string="Form Kedatangan Barang">
+                <sheet>
+                    <group>
+                        <field name="obat_id"/>
+                        <field name="jumlah"/>
+                    </group>
+                    <footer>
+                        <button name ="button_barang_datang" type="object" string="Input Obat" class="btn btn-warning"/>
+                        <button string="Cancel" special="cancel" class="btn btn-danger"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- model.name action window -->
+    <record id="barang_dtg_action_wizzard" model="ir.actions.act_window">
+        <field name="name">Kedatangan Barang</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">protrain.barangdatang</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="barang_dtg_view_form_wizzard"/>
+        <field name="target">new</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="barang_dtg_menu_action_wizzard"
+            name="Input Obat"
+            parent="protrain_obat_menu_categ"
+            action="barang_dtg_action_wizzard"
+            sequence="30"/>
+
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- protrain.kasir inherit tree view -->
+    <record id="protrain_kasir_tree_view_inherit" model="ir.ui.view">
+        <field name="name">Daftar Kasir</field>
+        <field name="model">protrain.kasir</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="protrain_person_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='notelp']" position="after">
+                <field name="id_kasir"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- protrain.kasir inherit form view -->
+    <record id="protrain_kasir_form_view_inherit" model="ir.ui.view">
+        <field name="name">Form Kasir</field>
+        <field name="model">protrain.kasir</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="protrain_person_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='notelp']" position="after">
+                <field name="id_kasir"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- protrain.kasir action window -->
+    <record id="protrain_kasir_action" model="ir.actions.act_window">
+        <field name="name">Kasir</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">protrain.kasir</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="protrain_kasir_menu_act"
+            name="Kasir"
+            parent="protrain_pegawai_menu_categ"
+            action="protrain_kasir_action"
+            sequence="20"/>
+
+</odoo>

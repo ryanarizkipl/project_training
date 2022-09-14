@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="report_obat_xlsx" model="ir.actions.report">
+        <field name="name">Daftar Obat Excel</field>
+        <field name="model">protrain.obat</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">protrain.report_obat_xlsx</field>
+        <field name="report_file">protrain.report_obat_xlsx</field>
+        <field name="binding_model_id" ref="model_protrain_obat"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_kelompok_obat_xlsx" model="ir.actions.report">
+        <field name="name">Daftar Kelompok Obat Excel</field>
+        <field name="model">protrain.kelompokobat</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">protrain.report_kelompok_obat_xlsx</field>
+        <field name="report_file">protrain.report_kelompok_obat_xlsx</field>
+        <field name="binding_model_id" ref="model_protrain_kelompokobat"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_apoteker_xlsx" model="ir.actions.report">
+        <field name="name">Daftar Apoteker Excel</field>
+        <field name="model">protrain.apoteker</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">protrain.report_apoteker_xlsx</field>
+        <field name="report_file">protrain.report_apoteker_xlsx</field>
+        <field name="binding_model_id" ref="model_protrain_apoteker"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_kasir_xlsx" model="ir.actions.report">
+        <field name="name">Daftar Kasir Excel</field>
+        <field name="model">protrain.kasir</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">protrain.report_kasir_xlsx</field>
+        <field name="report_file">protrain.report_kasir_xlsx</field>
+        <field name="binding_model_id" ref="model_protrain_kasir"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_supplier_xlsx" model="ir.actions.report">
+        <field name="name">Daftar Supplier Excel</field>
+        <field name="model">protrain.supplier</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">protrain.report_supplier_xlsx</field>
+        <field name="report_file">protrain.report_supplier_xlsx</field>
+        <field name="binding_model_id" ref="model_protrain_supplier"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_transaksi_xlsx" model="ir.actions.report">
+        <field name="name">Bukti Transaksi Excel</field>
+        <field name="model">protrain.transaksi</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">protrain.report_transaksi_xlsx</field>
+        <field name="report_file">protrain.report_transaksi_xlsx</field>
+        <field name="binding_model_id" ref="model_protrain_transaksi"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_transaksi_pdf" model="ir.actions.report">
+        <field name="name">Bukti Transaksi PDF</field>
+        <field name="model">protrain.transaksi</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">protrain.report_transaksi_pdf</field>
+        <field name="report_file">protrain.report_transaksi_pdf</field>
+        <field name="binding_model_id" ref="model_protrain_transaksi"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

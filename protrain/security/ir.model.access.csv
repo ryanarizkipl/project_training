@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_protrain_obat,accsess.protrain.obat,model_protrain_obat,,1,1,1,1
+access_protrain_kelompokobat,accsess.protrain.kelompokobat,model_protrain_kelompokobat,,1,1,1,1
+access_protrain_person,accsess.protrain.person,model_protrain_person,,1,1,1,1
+access_protrain_apoteker,accsess.protrain.apoteker,model_protrain_apoteker,,1,1,1,1
+access_protrain_kasir,accsess.protrain.kasir,model_protrain_kasir,,1,1,1,1
+access_protrain_supplier,accsess.protrain.supplier,model_protrain_supplier,,1,1,1,1
+access_protrain_transaksi,accsess.protrain.transaksi,model_protrain_transaksi,,1,1,1,1
+access_protrain_dettrans,accsess.protrain.dettrans,model_protrain_dettrans,,1,1,1,1
+access_protrain_barangdatang,accsess.protrain.barangdatang,model_protrain_barangdatang,,1,1,1,1

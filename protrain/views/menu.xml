@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="protrain_menu_root"
+            name="APOTEK RYN"
+            sequence="10"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="protrain_obat_menu_categ"
+            name="OBAT"
+            parent="protrain_menu_root"
+            sequence="10"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="protrain_pegawai_menu_categ"
+            name="PEGAWAI"
+            parent="protrain_menu_root" 
+            sequence="20"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="protrain_supplier_menu_categ"
+            name="SUPPLIER"
+            parent="protrain_menu_root"
+            sequence="30"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="protrain_transaksi_menu_categ"
+            name="TRANSAKSI"
+            parent="protrain_menu_root"
+            sequence="40"/>
+
+</odoo>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- model.name tree view -->
+    <record id="protrain_kelobat_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Jenis Obat</field>
+        <field name="model">protrain.kelompokobat</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="kode_obat"/>
+                <field name="name2"/>
+                <field name="stn_obat"/>
+                <field name="kode_rak"/>
+                <field name="jml_item"/>
+                <field name="daftar"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- model.name form view -->
+    <record id="protrain_kelobat_view_form" model="ir.ui.view">
+        <field name="name">Form Jenis Obat</field>
+        <field name="model">protrain.kelompokobat</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group name="kelombat" string="Kelompok Obat">
+                        <field name="name"/>
+                        <field name="kode_obat"/>
+                        <field name="name2"/>
+                        <field name="stn_obat"/>
+                        <field name="jml_item"/>
+                    </group>  
+                    <group name="rakobat" string="Rak Obat">
+                        <field name="kode_rak"/>
+                        <field name="obat_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- model.name action window -->
+    <record id="protrain_kelobat_menu_action" model="ir.actions.act_window">
+        <field name="name">Daftar Jenis Obat</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">protrain.kelompokobat</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="protain_kelobat_menu_act" 
+            name="Daftar Jenis Obat"
+            parent="protrain_obat_menu_categ"
+            action="protrain_kelobat_menu_action"
+            sequence="10"/>
+
+</odoo>

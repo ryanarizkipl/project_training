@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- protrain.supplier tree view -->
+    <record id="protrain_supplier_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Supplier</field>
+        <field name="model">protrain.supplier</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="alamat"/>
+                <field name="notelp"/>
+                <field name="obat_id"  widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- protrain.supplier form view -->
+    <record id="protrain_supplier_view_form" model="ir.ui.view">
+        <field name="name">Form Supplier</field>
+        <field name="model">protrain.supplier</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="alamat"/>
+                        <field name="notelp"/>
+                    </group>
+                    <group name="obat" string="Daftar Obat">
+                        <field name="obat_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- protrain.supplier action window -->
+    <record id="protrain_supplier_menu_action" model="ir.actions.act_window">
+        <field name="name">Daftar Supplier</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">protrain.supplier</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="protrain_supplier_menu_act"
+            name="Supplier"
+            parent="protrain_supplier_menu_categ"
+            action="protrain_supplier_menu_action"
+            sequence="40"/>
+
+</odoo>
